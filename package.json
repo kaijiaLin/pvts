@@ -1,8 +1,14 @@
 {
 	"name": "pvts",
-	"displayName": "prettier-vue-template-str",
+	"displayName": "prettier vue template string",
 	"description": "",
-	"version": "0.0.1",
+	"version": "0.0.2",
+	"publisher": "kaijialin",
+	"icon": "images/prettier-logo.png",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/kaijiaLin/pvts.git"
+	},
 	"engines": {
 		"vscode": "^1.69.0"
 	},
@@ -27,34 +33,6 @@
 				"mac": "alt+p",
 				"when": "editorTextFocus"
 			}
-		],
-		"languages": [
-			{
-				"id": "vue-html",
-				"aliases": [
-					"Vue-html"
-				],
-				"configuration": "./languages/vue-html-language-configuration.json"
-			}
-		],
-		"grammars": [
-			{
-				"language": "vue",
-				"scopeName": "source.vue",
-				"path": "./syntaxes/vue-generated.json",
-				"embeddedLanguages": {
-					"text.html.basic": "html",
-					"text.html.vue-html": "vue-html"
-				}
-			},
-			{
-				"language": "vue-html",
-				"scopeName": "text.html.vue-html",
-				"path": "./syntaxes/vue-html.tmLanguage.json",
-				"embeddedLanguages": {
-					"source.js": "javascript"
-				}
-			}
 		]
 	},
 	"scripts": {
@@ -64,6 +42,13 @@
 		"pretest": "npm run compile && npm run lint",
 		"lint": "eslint src --ext ts",
 		"test": "node ./out/test/runTest.js"
+	},
+	"dependencies": {
+		"vscode-languageclient": "^8.0.2",
+		"vscode-languageserver": "^8.0.2",
+		"vscode-languageserver-types": "^3.17.2",
+		"prettier": "^2.7.1",
+		"glob": "^8.0.3"
 	},
 	"devDependencies": {
 		"@types/glob": "^7.2.0",
@@ -75,13 +60,8 @@
 		"@typescript-eslint/parser": "^5.30.0",
 		"@vscode/test-electron": "^2.1.5",
 		"eslint": "^8.18.0",
-		"glob": "^8.0.3",
 		"husky": "^8.0.1",
 		"mocha": "^10.0.0",
-		"prettier": "^2.7.1",
-		"typescript": "^4.7.4",
-		"vscode-languageclient": "^8.0.2",
-		"vscode-languageserver": "^8.0.2",
-		"vscode-languageserver-types": "^3.17.2"
+		"typescript": "^4.7.4"
 	}
 }

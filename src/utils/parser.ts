@@ -12,7 +12,6 @@ export function getHTMLFromDocument(code: string): string {
 }
 
 export function getHTMLRange(allCode: string): Range {
-  console.log(allCode);
   let startLine = 0, startChar = 0, endLine = 0, endChar = 0;
   const lines = allCode.split('\r\n');
 
